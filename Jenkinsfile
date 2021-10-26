@@ -3,7 +3,9 @@ pipeline {
     stages {
 	    stage('Checkout') {
 		    steps {
-			    checkout scm
+			    git credentialsId: 'Github_credentials', url: 'https://github.com/arshad-ahmad/django-postgres-deployment-on-eks-through-jenkins'
+			    {
+				    checkout scm
 		    }
 	    }
 	    stage('Build image') {
